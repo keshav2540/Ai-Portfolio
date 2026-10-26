@@ -1,0 +1,15 @@
+[project]
+name = "ai-portfolio-backend"
+version = "0.1.0"
+description = "FastAPI backend for the AI portfolio (resume chatbot + JD matcher)"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "pypdf",
+    "python-docx",
+    "python-dotenv",
+    "groq>=1.7.0",
+    "pymongo>=4.18.2",
+]

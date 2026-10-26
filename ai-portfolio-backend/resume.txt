@@ -1,0 +1,40 @@
+NAME: Keshav
+CONTACT: kn254085@gmail.com | github.com/keshav2540 | Kota, Rajasthan
+
+SUMMARY:
+Third-year B.Tech Computer Science student (CGPA 8.9) who builds full-stack web applications with the MERN stack and AI-powered products with Python. Practices data structures and algorithms in C++ and Java. Seeking software engineering internship and placement opportunities (2028 batch).
+
+EDUCATION:
+B.Tech, Computer Science, Rajasthan Technical University (RTU), Kota, 2024-2028. CGPA 8.9.
+Coursework: Data Structures and Algorithms, DBMS, Computer Networks, Theory of Computation, Object-Oriented Design, Discrete Mathematics.
+
+TECHNICAL SKILLS:
+Languages: C++, Java, Python, JavaScript, SQL
+Frontend: React, Redux Toolkit, React Router, Context API, HTML, CSS, Bootstrap
+Backend: Node.js, Express, FastAPI, REST APIs, JWT, Passport.js
+Databases: MongoDB, MySQL
+Tools: Git, GitHub, Render, Cloudinary
+Core CS: Data Structures and Algorithms, OOP, Low-Level Design, SOLID principles, DBMS, Computer Networks
+
+PROJECTS:
+AI Portfolio: resume chatbot and job-match tool (React, FastAPI, Groq, MongoDB)
+- Chatbot that answers only from the resume text, so every answer is grounded in what the resume states.
+- Recruiters upload a job description as PDF or DOCX and get a weighted match percentage, a fit / partial / not-fit verdict, and matched and missing skills.
+- Stores per-session chat history and past match results in MongoDB so the bot remembers earlier questions.
+
+Wanderlust: Airbnb-style stay listing platform (Node.js, Express, MongoDB, EJS)
+- Listings with session-based authentication (Passport.js), owner and logged-in authorization middleware, and image uploads through Multer and Cloudinary.
+- Deployed on Render with environment-based configuration.
+
+Attires: multi-vendor clothing e-commerce platform, in progress (React, Node.js, Express, MongoDB)
+- Designing a platform where customers buy online or from offline stores, with separate customer and admin/worker frontends.
+- Defined role-based access for Admin, Shop Manager, Hub Manager and Delivery Person; built the add-to-cart flow in React.
+
+Myntra Clone: e-commerce storefront (React, Redux Toolkit, React Router, Express)
+- Storefront with Redux Toolkit slices for state management and React Router for navigation, backed by an Express API.
+
+FasalSetu: Smart India Hackathon 2026, Team Rangers (Next.js, Node.js, MongoDB, FastAPI)
+- Designed a farmer-to-consumer marketplace (PS 26033) to cut intermediaries, with demand forecasting, price intelligence, bulk order aggregation and smart logistics.
+
+INTERESTS:
+Chess, music and DJing, exploring new technology.
