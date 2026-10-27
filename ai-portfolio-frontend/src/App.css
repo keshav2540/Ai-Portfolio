@@ -1,0 +1,149 @@
+:root {
+  --bg-page: #0d0e11;
+  --bg-card: #17181c;
+  --bg-subtle: #111214;
+  --bg-pill: #1f2024;
+  --border-card: rgba(255, 255, 255, 0.06);
+  --border-card-hover: rgba(255, 255, 255, 0.11);
+  --text-main: #c4c4c8;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --text-dim: #52525b;
+  --gold-accent: #d97706;
+  --gold-light: #fbbf24;
+
+  --head: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --body: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Minimalist Dark Scroller */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font: 14px/1.6 var(--body);
+  -webkit-font-smoothing: antialiased;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+button, textarea, input {
+  font: inherit;
+  color: inherit;
+}
+
+/* ─────────────────────────────────────────
+   Page wrapper — simple padding only
+───────────────────────────────────────── */
+.bento-page-wrap {
+  padding: 24px 20px;
+  min-height: 100vh;
+  background-color: #1c221d;
+}
+
+/* ─────────────────────────────────────────
+   Grid: LEFT column content drives the ROW height.
+   CSS Grid align-items:stretch (default) makes
+   BOTH cells exactly the same height automatically.
+   No explicit height on the container needed.
+───────────────────────────────────────── */
+.bento-app-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 44fr 56fr;
+  /* NO grid-template-rows — let content determine height naturally */
+  gap: 18px;
+  align-items: stretch; /* right column will always match left column height */
+}
+
+/* Right Pane: height:100% fills the grid cell (= left column height) */
+.bento-right-pane {
+  display: flex;
+  flex-direction: column;
+  height: 100%;   /* matches the grid row height set by left column */
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes bounceDot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.3; }
+  40%           { transform: scale(1.1); opacity: 1;   }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Tablet (≤ 960 px): stack to single column ── */
+@media (max-width: 960px) {
+  .bento-page-wrap {
+    padding: 18px 14px;
+  }
+
+  .bento-app-container {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    gap: 14px;
+    align-items: start; /* stacked: don't force-stretch vertically */
+  }
+
+  .bento-right-pane {
+    height: clamp(380px, 60vh, 540px);
+    min-height: 360px;
+  }
+}
+
+/* ── Mobile (≤ 600 px) ── */
+@media (max-width: 600px) {
+  .bento-page-wrap {
+    padding: 12px 10px;
+  }
+
+  .bento-app-container {
+    gap: 12px;
+  }
+
+  .bento-right-pane {
+    height: clamp(340px, 58vh, 480px);
+    min-height: 320px;
+  }
+}
+
+/* ── Small Mobile (≤ 420 px) ── */
+@media (max-width: 420px) {
+  .bento-page-wrap {
+    padding: 10px 8px;
+  }
+
+  .bento-app-container {
+    gap: 10px;
+  }
+
+  .bento-right-pane {
+    height: clamp(310px, 56vh, 420px);
+    min-height: 300px;
+  }
+}
+strong{
+  color: rgba(34, 114, 34, 0.984) !important;
+}

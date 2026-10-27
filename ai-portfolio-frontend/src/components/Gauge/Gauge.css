@@ -1,0 +1,121 @@
+.gauge-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 18px;
+}
+
+.gauge-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.gauge-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.gauge-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.gauge-pill.fit {
+  background-color: var(--fit-bg);
+  color: var(--fit);
+  border: 1px solid var(--fit-border);
+}
+
+.gauge-pill.part {
+  background-color: var(--part-bg);
+  color: var(--part);
+  border: 1px solid var(--part-border);
+}
+
+.gauge-pill.no {
+  background-color: var(--no-bg);
+  color: var(--no);
+  border: 1px solid var(--no-border);
+}
+
+.track-wrapper {
+  padding: 8px 0;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  height: 10px;
+  border-radius: 5px;
+  overflow: visible;
+  background-color: #27272a;
+}
+
+.zone-no {
+  width: 50%;
+  background-color: #451a1a;
+  border-radius: 5px 0 0 5px;
+}
+
+.zone-part {
+  width: 20%;
+  background-color: #452b12;
+}
+
+.zone-fit {
+  width: 30%;
+  background-color: #0f3d2e;
+  border-radius: 0 5px 5px 0;
+}
+
+.needle {
+  position: absolute;
+  top: -6px;
+  width: 2px;
+  height: 22px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transform: translateX(-50%);
+  transition: left 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+}
+
+.needle-dot {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.zlabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 6px;
+}
+
+.lbl-no {
+  color: var(--no);
+  font-weight: 500;
+}
+
+.lbl-part {
+  color: var(--part);
+  font-weight: 500;
+}
+
+.lbl-fit {
+  color: var(--fit);
+  font-weight: 500;
+}

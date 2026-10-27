@@ -1,0 +1,351 @@
+.bento-matcher-card {
+  background-color: #17181c;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0;          /* fills .bento-right-pane which fills the grid cell */
+  min-height: 0;        /* critical: allows flex child to shrink & scroll */
+  height: 100%;
+  padding: 18px 20px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+}
+
+.bento-matcher-card::-webkit-scrollbar {
+  width: 5px;
+}
+
+.bento-matcher-card::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 999px;
+}
+
+.bento-matcher-card::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+}
+
+.bento-matcher-card::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Header */
+.matcher-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.matcher-card-title {
+  font: 700 1.08rem/1.2 var(--head, "Bricolage Grotesque", sans-serif);
+  color: #d97706; /* Muted amber — matches chat title */
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.toggle-chat-btn {
+  background-color: #1a1b1f;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #71717a;           /* Dimmed — matches muted palette */
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  letter-spacing: 0.01em;
+}
+
+.toggle-chat-btn:hover {
+  background-color: #222328;
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #a1a1aa;
+}
+
+.matcher-subtext {
+  color: #8e8f96;
+  font-size: 0.8rem;
+  margin: 0 0 12px;
+  line-height: 1.45;
+  flex-shrink: 0;
+}
+
+/* Dropzone */
+.bento-dropzone {
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  background-color: #131417;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.bento-dropzone.drag-over {
+  border-color: #f59e0b;
+  background-color: #1a1c22;
+}
+
+.bento-dropzone.has-file {
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 10px 12px;
+  cursor: default;
+}
+
+.drop-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #1b1c20;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 8px;
+}
+
+.drop-main-text {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 3px;
+}
+
+.drop-sub-text {
+  font-size: 0.74rem;
+  color: #71717a;
+  margin: 0;
+}
+
+.browse-inline {
+  color: #f59e0b;
+  text-decoration: underline;
+}
+
+/* Uploaded file chip */
+.bento-file-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1b1c20;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.file-chip-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  word-break: break-all;
+}
+
+.file-chip-size {
+  display: block;
+  font-size: 0.7rem;
+  color: #71717a;
+}
+
+.file-chip-remove {
+  background: none;
+  border: none;
+  color: #71717a;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 2px;
+}
+
+.file-chip-remove:hover {
+  color: #ef4444;
+}
+
+/* Paste Text */
+.bento-paste-box {
+  margin-top: 10px;
+  flex-shrink: 0;
+}
+
+.bento-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 8px;
+}
+
+.bento-divider .line {
+  flex: 1;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.bento-divider .text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #71717a;
+}
+
+.bento-textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  background-color: #131417;
+  color: #ffffff;
+  resize: vertical;
+}
+
+.bento-textarea:focus {
+  border-color: rgba(255, 255, 255, 0.28);
+  outline: none;
+}
+
+.bento-textarea::placeholder {
+  color: #71717a;
+}
+
+/* Run Button */
+.bento-run-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  background-color: #f59e0b;
+  border: none;
+  color: #0d0f12;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.bento-run-btn:hover:not(:disabled) {
+  background-color: #fbbf24;
+  transform: translateY(-1px);
+}
+
+.bento-run-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Results */
+.bento-results-wrap {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.result-banner-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.result-verdict-text {
+  font: 700 1.2rem/1.2 var(--head, "Bricolage Grotesque", sans-serif);
+  color: #ffffff;
+  margin: 0;
+}
+
+.result-score-badge {
+  background-color: #222328;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 3px 12px;
+  border-radius: 999px;
+}
+
+.bento-reason-box {
+  background-color: #131417;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #f59e0b;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: #d4d4d8;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.bento-skills-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.skills-card {
+  background-color: #131417;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+.skills-card h4 {
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px;
+}
+
+.skills-card.matched h4 { color: #34d399; }
+.skills-card.missing h4 { color: #f87171; }
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.pill-item {
+  font-size: 0.72rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background-color: #222328;
+}
+
+.pill-item.good {
+  color: #34d399;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.pill-item.bad {
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+@media (max-width: 600px) {
+  .bento-matcher-card {
+    padding: 14px 12px;
+    border-radius: 15px;
+  }
+
+  .matcher-card-title {
+    font-size: 1.05rem;
+  }
+
+  .bento-skills-cols {
+    grid-template-columns: 1fr;
+  }
+}
