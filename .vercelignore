@@ -2,6 +2,5 @@
 __pycache__
 qdrant_db
 .env
-ai-portfolio-frontend
 resume.txt
 
