@@ -151,6 +151,16 @@ class ChatIn(BaseModel):
     message: str = Field(min_length=1, max_length=50000)
 
 
+@app.get("/")
+def root():
+    return {
+        "status": "online",
+        "service": "AI Portfolio Backend API",
+        "docs": "/docs",
+        "health": "/api/rag/status",
+    }
+
+
 @app.post("/api/chat")
 def chat(body: ChatIn, request: Request):
     limit(request)
