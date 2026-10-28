@@ -11,6 +11,7 @@
   overflow: hidden;
   position: relative;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  max-height: 1345px;
 }
 
 /* Chat Header - Pinned at top */
@@ -38,11 +39,11 @@
 }
 
 .new-chat-btn {
-  background-color: #1a1b1f;
+  background-color: black;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #71717a;           /* Dimmed text — not harsh white */
+  color: white;           /* Dimmed text — not harsh white */
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 400;
   padding: 4px 11px;
   border-radius: 999px;
   cursor: pointer;
@@ -72,11 +73,11 @@
 }
 
 .toggle-match-btn {
-  background-color: #1a1b1f;
+  background-color: white;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #71717a;           /* Dimmed text — matches muted palette */
+  color: black;           /* Dimmed text — matches muted palette */
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 4px 12px;
   border-radius: 999px;
   cursor: pointer;
@@ -469,5 +470,19 @@
     width: 32px;
     height: 32px;
     font-size: 1rem;
+  }
+}
+
+
+/* Mobile & Tablet Natural Page Scroll */
+@media (max-width: 960px) {
+  .bento-chat-card {
+    touch-action: pan-y;
+  }
+
+  .bento-chat-log {
+    overscroll-behavior: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 }

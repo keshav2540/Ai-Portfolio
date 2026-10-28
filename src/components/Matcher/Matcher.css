@@ -51,11 +51,11 @@
 }
 
 .toggle-chat-btn {
-  background-color: #1a1b1f;
+  background-color: #f7f7f7;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #71717a;           /* Dimmed — matches muted palette */
+  color: #000000;           /* Dimmed — matches muted palette */
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 500;
   padding: 4px 12px;
   border-radius: 999px;
   cursor: pointer;
@@ -347,5 +347,15 @@
 
   .bento-skills-cols {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* Mobile & Tablet Natural Page Scroll */
+@media (max-width: 960px) {
+  .bento-matcher-card {
+    overscroll-behavior: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
   }
 }

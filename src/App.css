@@ -31,15 +31,37 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-html, body {
+/* Mobile-friendly natural scroll on root elements */
+html {
   margin: 0;
   padding: 0;
+  min-height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: var(--bg-page);
   color: var(--text-main);
   font: 14px/1.6 var(--body);
   -webkit-font-smoothing: antialiased;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  min-height: 100dvh;
+  touch-action: pan-y;
+  overflow-x: hidden;
 }
 
 button, textarea, input {
@@ -48,37 +70,46 @@ button, textarea, input {
 }
 
 /* ─────────────────────────────────────────
-   Page wrapper — simple padding only
+   Page wrapper — Desktop: Pinned 100dvh for Dual Independent Column Scrolling
 ───────────────────────────────────────── */
 .bento-page-wrap {
-  padding: 24px 20px;
-  min-height: 100vh;
-  background-color: #1c221d;
+  padding: 20px 24px;
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  touch-action: pan-y;
+  width: 100%;
 }
 
 /* ─────────────────────────────────────────
-   Grid: LEFT column content drives the ROW height.
-   CSS Grid align-items:stretch (default) makes
-   BOTH cells exactly the same height automatically.
-   No explicit height on the container needed.
+   Grid: 2 Independent Scrolling Columns on Desktop
 ───────────────────────────────────────── */
 .bento-app-container {
-  max-width: 1280px;
+  max-width: 1340px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 44fr 56fr;
-  /* NO grid-template-rows — let content determine height naturally */
-  gap: 18px;
-  align-items: stretch; /* right column will always match left column height */
+  grid-template-columns: 46fr 54fr;
+  gap: 20px;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  align-items: stretch;
+  touch-action: pan-y;
 }
 
-/* Right Pane: height:100% fills the grid cell (= left column height) */
+/* Right Pane: 100% height independent scroll */
 .bento-right-pane {
   display: flex;
   flex-direction: column;
-  height: 100%;   /* matches the grid row height set by left column */
+  height: 100%;
   min-height: 0;
   overflow: hidden;
+  position: relative;
+  touch-action: pan-y;
 }
 
 /* Animations */
@@ -94,22 +125,38 @@ button, textarea, input {
   to { transform: rotate(360deg); }
 }
 
-/* ── Tablet (≤ 960 px): stack to single column ── */
+/* ── Tablet & Mobile (≤ 960 px): stack vertically with smooth page scroll ── */
 @media (max-width: 960px) {
+  html, body {
+    overflow-y: auto;
+  }
+
   .bento-page-wrap {
-    padding: 18px 14px;
+    padding: 16px 14px;
+    height: auto;
+    min-height: 100dvh;
+    max-height: none;
+    overflow: visible;
+    touch-action: pan-y;
   }
 
   .bento-app-container {
     grid-template-columns: 1fr;
     max-width: 680px;
-    gap: 14px;
-    align-items: start; /* stacked: don't force-stretch vertically */
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+    gap: 16px;
+    align-items: start;
+    touch-action: pan-y;
   }
 
   .bento-right-pane {
     height: clamp(380px, 60vh, 540px);
     min-height: 360px;
+    max-height: none;
+    overflow: visible;
+    touch-action: pan-y;
   }
 }
 
@@ -117,15 +164,20 @@ button, textarea, input {
 @media (max-width: 600px) {
   .bento-page-wrap {
     padding: 12px 10px;
+    min-height: 100dvh;
+    touch-action: pan-y;
   }
 
   .bento-app-container {
     gap: 12px;
+    touch-action: pan-y;
   }
 
   .bento-right-pane {
     height: clamp(340px, 58vh, 480px);
     min-height: 320px;
+    overflow: visible;
+    touch-action: pan-y;
   }
 }
 
@@ -133,17 +185,24 @@ button, textarea, input {
 @media (max-width: 420px) {
   .bento-page-wrap {
     padding: 10px 8px;
+    min-height: 100dvh;
+    touch-action: pan-y;
   }
 
   .bento-app-container {
     gap: 10px;
+    touch-action: pan-y;
   }
 
   .bento-right-pane {
     height: clamp(310px, 56vh, 420px);
     min-height: 300px;
+    overflow: visible;
+    touch-action: pan-y;
   }
 }
-strong{
-  color: rgba(34, 114, 34, 0.984) !important;
+
+strong {
+  color: rgb(137 249 128) !important;
+  font-weight: 500 !important;
 }

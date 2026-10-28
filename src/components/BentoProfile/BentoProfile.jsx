@@ -1,5 +1,36 @@
 import "./BentoProfile.css";
 
+const PROJECTS = [
+  {
+    name: "Attires - Customer Portal",
+    description: "Multi-vendor customer storefront with Razorpay checkout & MCP server",
+    image: "/customer-front.png",
+    liveUrl: "https://attires-frontend-customers.vercel.app/",
+    topicPrompt: "Tell me about the Attire customer storefront and multi-vendor platform.",
+  },
+  {
+    name: "Attires - Operations Platform",
+    description: "Operations & admin portal with Google OAuth & order dispatch",
+    image: "/ops.png",
+    liveUrl: "https://attires-operational-plafrom.vercel.app/login",
+    topicPrompt: "Tell me about the Attire operations and worker management system.",
+  },
+  {
+    name: "Airbnb (Wanderlust) - Backend",
+    description: "MVC architecture with MongoDB, Passport.js, Mapbox & Cloudinary",
+    image: "/airbnb.png",
+    liveUrl: "https://airbnb-backend-v1gx.onrender.com/listings",
+    topicPrompt: "Tell me about the Airbnb full-stack clone project.",
+  },
+  {
+    name: "AI Portfolio",
+    description: "RAG system powered by Qdrant vector database & Groq LLMs",
+    image: "/ai-portfolio.png",
+    liveUrl: "https://ai-protfolio-eta.vercel.app/",
+    topicPrompt: "Tell me about your GenAI RAG pipeline project.",
+  },
+];
+
 export default function BentoProfile({ onSelectTopic }) {
   return (
     <div className="bento-profile-col">
@@ -40,76 +71,58 @@ export default function BentoProfile({ onSelectTopic }) {
 
       {/* 3. Projects Card */}
       <div className="bento-card bento-projects-card">
-        <span className="bento-label">PROJECTS</span>
-        <div className="bento-projects-content">
-          <div className="projects-list">
-            <div
-              className="project-item"
-              onClick={() =>
-                onSelectTopic &&
-                onSelectTopic(
-                  "Tell me about the Attire multi-vendor e-commerce platform."
-                )
-              }
-            >
-              Attire e-commerce platform (MCP server)
-            </div>
-            <div
-              className="project-item"
-              onClick={() =>
-                onSelectTopic &&
-                onSelectTopic("Tell me about your GenAI RAG pipeline project.")
-              }
-            >
-              GenAI RAG pipeline + MCP agent server
-            </div>
-            <div
-              className="project-item"
-              onClick={() =>
-                onSelectTopic &&
-                onSelectTopic("Tell me about the Airbnb full-stack clone project.")
-              }
-            >
-              Airbnb full-stack clone
-            </div>
-          </div>
+        <div className="bento-card-header">
+          <span className="bento-label">PROJECTS</span>
+          <span className="bento-label-hint">Tap image to open live site ↗</span>
+        </div>
 
-          <div className="projects-thumbnails">
-            <div
-              className="thumb-box"
-              onClick={() =>
-                onSelectTopic &&
-                onSelectTopic("Tell me about the Attire customer frontend platform.")
-              }
-              title="Attire Customer Storefront"
-            >
-              <img
-                src="/customer-front.png"
-                alt="Attire Storefront"
-                className="thumb-img"
-              />
-              <div className="thumb-overlay">
-                <span className="thumb-caption">Attire Store</span>
+        <div className="projects-grid">
+          {PROJECTS.map((project) => (
+            <div key={project.name} className="project-grid-card">
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-thumb-link"
+                aria-label={`Open ${project.name} live site`}
+              >
+                <img
+                  src={project.image}
+                  alt={`${project.name} live preview`}
+                  className="project-thumb-img"
+                  loading="lazy"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+                <div className="project-thumb-overlay">
+                  <span className="project-thumb-caption">Live Site ↗</span>
+                </div>
+              </a>
+
+              <div className="project-info">
+                <div
+                  className="project-title"
+                  onClick={() =>
+                    onSelectTopic && onSelectTopic(project.topicPrompt)
+                  }
+                  title="Ask AI about this project"
+                >
+                  {project.name}
+                </div>
+                <p className="project-desc">{project.description}</p>
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-live-btn"
+                  aria-label={`Open ${project.name} live site`}
+                >
+                  Visit Live ↗
+                </a>
               </div>
             </div>
-            <div
-              className="thumb-box"
-              onClick={() =>
-                onSelectTopic &&
-                onSelectTopic("Tell me about the Attire operations and worker management system.")
-              }
-              title="Attire Operations & Admin"
-            >
-              <img
-                src="/ops.png"
-                alt="Attire Operations"
-                className="thumb-img"
-              />
-              <div className="thumb-overlay">
-                <span className="thumb-caption">Attire Ops</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
