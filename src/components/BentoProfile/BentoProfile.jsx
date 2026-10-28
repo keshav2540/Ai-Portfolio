@@ -151,7 +151,7 @@ export default function BentoProfile({ onSelectTopic }) {
               github.com/keshav2540
             </a>
             <a
-              href="https://linkedin.com/in/keshav-nagar"
+              href="https://www.linkedin.com/in/keshav-nagar-76a0b8328?utm_source=share_via&utm_content=profile&utm_medium=member_android"
               target="_blank"
               rel="noreferrer"
               className="contact-item-link"
