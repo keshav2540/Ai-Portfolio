@@ -1,9 +1,0 @@
-{
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "functions": {
-    "api/index.py": {
-      "maxDuration": 60,
-      "excludeFiles": "{ai-portfolio-frontend/**,.venv/**,qdrant_db/**,__pycache__/**}"
-    }
-  }
-}
