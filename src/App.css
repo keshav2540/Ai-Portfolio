@@ -105,7 +105,7 @@ button, textarea, input {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height:80vh;
+  min-height:90vh;
   overflow: hidden;
   position: relative;
   touch-action: pan-y;
