@@ -101,7 +101,6 @@ button, textarea, input {
   touch-action: pan-y;
 }
 
-/* Right Pane: 100% height independent scroll */
 .bento-right-pane {
   display: flex;
   flex-direction: column;
