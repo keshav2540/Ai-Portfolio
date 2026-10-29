@@ -350,11 +350,6 @@
     align-items: flex-start;
   }
 
-  .bento-photo-box {
-    width: 80px;
-    height: 80px;
-  }
-
   .bento-row.split-2 {
     grid-template-columns: 1fr;
   }
