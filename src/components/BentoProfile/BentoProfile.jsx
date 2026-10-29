@@ -35,12 +35,7 @@ export default function BentoProfile({ onSelectTopic }) {
   return (
     <div className='bento-profile-col'>
       {/* 1. Hero Card */}
-      <div className='bento-card bento-hero'>
-        <div className='bento-hero-info'>
-          <span className='bento-label'>PORTFOLIO</span>
-          <h1>Keshav Nagar</h1>
-          <p className='bento-hero-sub'>Full-stack &amp; AI developer</p>
-        </div>
+      <div className='bento-card bento-hero'> 
         <div className='bento-photo-box' title='Keshav Nagar'>
           <img
             src='/image.png'
@@ -51,6 +46,12 @@ export default function BentoProfile({ onSelectTopic }) {
             }}
           />
         </div>
+        <div className='bento-hero-info'>
+          <span className='bento-label'>PORTFOLIO</span>
+          <h1>Keshav Nagar</h1>
+          <p className='bento-hero-sub'>Full-stack &amp; AI developer</p>
+        </div>
+       
       </div>
 
       {/* 2. Split Row: Education & CGPA */}
